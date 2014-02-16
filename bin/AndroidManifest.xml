@@ -52,6 +52,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="android.app.ListActivity" />
         </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" 
+            android:screenOrientation="portrait"
+             android:name=".NuevoNumero">
+            
+        </activity>
     </application>
 
 </manifest>

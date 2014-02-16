@@ -1,6 +1,5 @@
 package com.example.vidaux;
 
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
@@ -16,14 +15,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends Activity implements OnClickListener{
 Button b , btRojo, btAmarillo, btVerde, btSUME;
 Intent callIntent;
-String APLAFA_Num = "65981673";
+String APLAFA_Num ;
+String pass;
 String  User_Num;
+@Override
+protected void onResume() {
+	// TODO Auto-generated method stub
+	super.onResume();
+	obtener_numero();
+}
+
+
 //private DBAdapter mDbHelper;
 DataBaseManager database;
 
@@ -31,7 +40,10 @@ private Cursor cursor;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
+		
+		obtener_numero();
 		
 		btRojo = (Button) findViewById(R.id.btRojo);
 		btAmarillo = (Button) findViewById(R.id.btAmarillo);
@@ -61,6 +73,7 @@ private Cursor cursor;
 	     menu.add(Menu.NONE, 2, Menu.NONE, "Directorio").setIcon(android.R.drawable.ic_dialog_info);
 	    // menu.add(Menu.NONE, 3, Menu.NONE, "Registrar").setIcon(R.drawable.ic_launcher);
 	     menu.add(Menu.NONE, 4, Menu.NONE, "Ver Circulo").setIcon(android.R.drawable.ic_menu_agenda);
+	     menu.add(Menu.NONE, 5, Menu.NONE, "Config").setIcon(R.drawable.ic_launcher);
 		
 		return true;
 		
@@ -77,7 +90,7 @@ private Cursor cursor;
         	AlertDialog alertDialog;
         	alertDialog = new AlertDialog.Builder(this).create();
         	alertDialog.setTitle("Lineas de Ayuda");
-        	alertDialog.setMessage("Telefonos de Ayuda\nPolicia Naccional 104\nBomberos  103\nMIDES 147\n"+ User_Num);
+        	alertDialog.setMessage("Telefonos de Ayuda\nPolicia Naccional 104\nBomberos  103\nMIDES 147\n"+ User_Num );
         	alertDialog.show();
         	return true;
         case 3:
@@ -87,12 +100,13 @@ private Cursor cursor;
         case 4:
         	Intent g = new Intent(this, VerCirculo.class);
         	startActivity(g);
-        	
-        	
-//        	Intent il = new Intent(this, VerTodo.class );
-//            startActivity(il);
-            //aki para ver los numeros a los ke les mando el mensaje            
+        	return true;
+            
+        case 5:
+        	Intent il = new Intent(this, NuevoNumero.class );
+        	startActivity(il);
             return true;
+            
         	
         default:
             return super.onOptionsItemSelected(item);
@@ -175,7 +189,33 @@ private Cursor cursor;
 		  mTelephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE); 
 		  return mTelephonyManager.getLine1Number();
 		}
-
+	
+	
+	public void obtener_numero(){
+		DataBaseManager database = DataBaseManager.instance();  
+		Cursor datos = database.select("select * from aplafa"); 
+				
+		 try {
+	    	 if (datos == null){
+	    	     	datos.close();
+	    	     }else
+	    	     {
+	    	     	datos.moveToFirst();
+	    	     }
+	    
+	    	 APLAFA_Num = datos.getString(1); 
+	    	 pass = datos.getString(2); 
+	    	 datos.close();
+	    	 	    			 
+	     }
+	     catch(Exception hj){
+	     	 Toast.makeText(this,hj.toString(), Toast.LENGTH_LONG).show();
+	     	
+	     	}	
+		
+			}
+	
+	
 	
 	}
 

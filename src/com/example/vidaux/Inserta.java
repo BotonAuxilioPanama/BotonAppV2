@@ -1,8 +1,6 @@
 package com.example.vidaux;
 
 
-
-
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
