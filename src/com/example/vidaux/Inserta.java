@@ -1,7 +1,10 @@
-package com.example.pruebalista;
+package com.example.vidaux;
 
-import DB.src.DBAdapter;
+
+
+
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
@@ -18,16 +21,19 @@ public class Inserta extends Activity implements OnClickListener {
 	Button btGuardar, btBuscar;
 	EditText etnombre, etnumero, etcorreo;
 	private Long mRowId;
-	private DBAdapter mDbHelper;
+	private DataBaseManager database;
+	//private DBAdapter mDbHelper;
 	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.insertanumero);
+		
+		database = DataBaseManager.instance();
 
-		mDbHelper = new DBAdapter(this);
-		mDbHelper.open();
+		/*mDbHelper = new DBAdapter(this);
+		mDbHelper.open();*/
 
 		btGuardar = (Button) findViewById(R.id.buttonGuardar);
 		btBuscar = (Button) findViewById(R.id.ButtonBuscar);
@@ -67,18 +73,33 @@ public class Inserta extends Activity implements OnClickListener {
 		//mRowId = null;
 		
 		try {
-//									
-			if (mRowId == null) {
-				long id = mDbHelper.createItem(name, num, correo);
-				if (id > 0) {
-					mRowId = id;
-					Toast.makeText(Inserta.this, "Inserción Correcta", Toast.LENGTH_SHORT).show();
-				}
-			} else {
+			ContentValues valores = new ContentValues();
+			valores.put("nombre", name);
+			valores.put("numero", num);
+			valores.put("correo", correo);
 			
-				mDbHelper.updateItem(mRowId, name, num, correo);
-				Toast.makeText(Inserta.this, "Contacto Actualizado", Toast.LENGTH_SHORT).show();
-			}
+			database.insert("circulo", valores);
+
+			Toast.makeText(Inserta.this,
+					"Insercion de Contacto Exitosa",
+					Toast.LENGTH_LONG).show();
+
+			finish();
+			
+//									
+//			if (mRowId == null) {
+//				
+//				
+//				long id = mDbHelper.createItem(name, num, correo);
+//				if (id > 0) {
+//					mRowId = id;
+//					Toast.makeText(Inserta.this, "Inserción Correcta", Toast.LENGTH_SHORT).show();
+//				}
+//			} else {
+//			
+//				mDbHelper.updateItem(mRowId, name, num, correo);
+//				Toast.makeText(Inserta.this, "Contacto Actualizado", Toast.LENGTH_SHORT).show();
+//			}
 //			
 		
 	} catch (Exception hg) {

@@ -1,7 +1,6 @@
-package com.example.pruebalista;
+package com.example.vidaux;
 
 
-import DB.src.DBAdapter;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
@@ -23,9 +22,10 @@ import android.widget.Toast;
 public class MainActivity extends Activity implements OnClickListener{
 Button b , btRojo, btAmarillo, btVerde, btSUME;
 Intent callIntent;
-String APLAFA_Num = "64095044";
+String APLAFA_Num = "65981673";
 String  User_Num;
-private DBAdapter mDbHelper;
+//private DBAdapter mDbHelper;
+DataBaseManager database;
 
 private Cursor cursor;
 	@Override
@@ -141,10 +141,13 @@ private Cursor cursor;
 	public void alertar (String msg){
 		try {
 			
-			mDbHelper = new DBAdapter(this);
-			mDbHelper.open();
+		   database = DataBaseManager.instance();
+						
+//			mDbHelper = new DBAdapter(this);
+//			mDbHelper.open();
 			
-			cursor = mDbHelper.fetchAll();
+			cursor = database.select("SELECT * FROM circulo"); 
+					//mDbHelper.fetchAll();
 	 		 		
 	 		if (cursor != null && cursor.moveToFirst()) {
 				 do {

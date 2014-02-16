@@ -1,6 +1,5 @@
-package com.example.pruebalista;
+package com.example.vidaux;
 
-import DB.src.DBAdapter;
 import android.app.ListActivity;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -16,9 +15,11 @@ import android.widget.Toast;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 
 public class VerCirculo extends ListActivity {
-	private DBAdapter mDbHelper;
+	//private DBAdapter mDbHelper;
+	
 	
 	private Cursor cursor;
+	DataBaseManager database;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -47,10 +48,12 @@ public class VerCirculo extends ListActivity {
 	public void lista(){
        try {
 			
-			mDbHelper = new DBAdapter(this);
-			mDbHelper.open();
+//			mDbHelper = new DBAdapter(this);
+//			mDbHelper.open();
 			
-			cursor = mDbHelper.fetchAll();
+    	   database = DataBaseManager.instance();
+    	   
+			cursor = database.select("SELECT * FROM circulo");//mDbHelper.fetchAll();
 	 		 			
 			 cursor.moveToFirst();
 			
@@ -77,9 +80,11 @@ public class VerCirculo extends ListActivity {
  		AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
 		switch (item.getItemId()) {
   		case R.id.eliminar_menu:
-  			mDbHelper.deleteItem(info.id);
-//  			database.delete("registros", "_id= " + String.valueOf(info.id) );
+//  			mDbHelper.deleteItem(info.id);
+////  			database.delete("registros", "_id= " + String.valueOf(info.id) );
+  		database.delete("circulo", "_id= " + String.valueOf(info.id) );
   			lista();
+  			
   			return true;
   			 		
   		}

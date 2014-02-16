@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.pruebalista"
+    package="com.example.vidaux"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -14,12 +14,13 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
+        android:name="com.example.vidaux.ApplicationContextProvider"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.pruebalista.MainActivity"
+            android:name="com.example.vidaux.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" >
@@ -30,21 +31,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pruebalista.Inserta"
+            android:name="com.example.vidaux.Inserta"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible|adjustResize" >
         </activity>
         <activity
-            android:name="com.example.pruebalista.NuevoUsuarioActivity"
+            android:name="com.example.vidaux.NuevoUsuarioActivity"
             android:label="Crear nuevo usuario" >
         </activity>
         <activity
-            android:name="com.example.pruebalista.VerTodo"
+            android:name="com.example.vidaux.VerTodo"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible|adjustResize" >
         </activity>
         <activity
-            android:name="com.example.pruebalista.VerCirculo"
+            android:name="com.example.vidaux.VerCirculo"
             android:label="@string/title_activity_ver_circulo" 
              android:screenOrientation="portrait">
             <meta-data
