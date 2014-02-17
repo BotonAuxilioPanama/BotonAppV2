@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">VidAux</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_ver_circulo">ViewCircle</string>
+    <string name="action_settings">Settings</string>
+    <string name="ValVerde">Conflict</string>
+    <string name="ValAmarillo">Threat</string>
+    <string name="ValRojo">Violence or Injury</string>
+    <string name="ing_pass">Enter Password</string>
+    <string name="pass">Password</string>
+    <string name="sel_contacto">Select el Contact</string>
+    <string name="nombre">Name</string>
+    <string name="numero">Cell Number</string>
+    <string name="buscar">Search</string>
+    <string name="guardar">Save</string>
+    <string name="vacia">"            "</string>
+    <string name="new_contacto">New Contact Number</string>
+    <string name="num_actual">Current Cell Number:  </string>
+    <string name="nue_num">New Cell number</string>
+    <string name="inser_exitosa">Inserting Contact Number Successful!!</string>
+    <string name="error">An error has occurred. =(</string>
+    <string name="correo">E-mail</string>
+    <string name="ok">OK</string>
+    <string name="cancelar">Cancel</string>
+    <string name="admin_op">Manager Options</string>
+    <string name="envio">Sent to: </string>
+    <string name="llamada">Falied Call</string>
+    <string name="pass_error">Wrong Password</string>
+    <string name="alert_linea_ayuda">Helplines</string>
+    <string name="directorio">Helplines\nPolice 104\nFire department  103\nMIDES 147\n</string>
+    <string name="mensaje_verde">Green Alert. I have Occasional Conflicts. For now I am not in danger. </string>
+    <string name="mensaje_amarillo">Yellow Alert. Have conflicts. I am Under Threat. I can be in danger. </string>
+    <string name="mensaje_rojo">Red Alert. I have Violent Conflict. I AM IN DANGER. ! HELP </string>
+    <string name="intoduce_numero">You must enter a numeric value</string>
+    <string name="eliminar">Remove Contact</string>
+    <string name="circulo">+Persons to the Circle</string>
+    <string name="lin_ayuda">Helplines</string>
+    <string name="ver_mi_circulo">View My Circle</string>
+    <string name="config">Options</string>
+
+</resources>

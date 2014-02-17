@@ -1,4 +1,4 @@
-package com.example.vidaux;
+package com.aplafa.vidaux;
 
 import java.security.MessageDigest;
 

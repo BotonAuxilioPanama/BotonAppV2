@@ -1,4 +1,4 @@
-package com.example.vidaux;
+package com.aplafa.vidaux;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -18,7 +18,7 @@ public class DataBaseManager extends SQLiteOpenHelper {
     // The Android's default system path of your application database.
     //data/data/ and /databases remain the same always. The one that must be changed is com.example which represents
     //the MAIN package of your project
-    private static String DB_PATH = "/data/data/com.example.vidaux/databases/";
+    private static String DB_PATH = "/data/data/com.aplafa.vidaux/databases/";
  
     //the name of your database
     private static String DB_NAME = "datosboton.db";

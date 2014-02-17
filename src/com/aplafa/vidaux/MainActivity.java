@@ -1,4 +1,6 @@
-package com.example.vidaux;
+package com.aplafa.vidaux;
+
+
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -88,7 +90,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			alertDialog = new AlertDialog.Builder(this).create();
 			alertDialog.setTitle(getResources().getString(R.string.alert_linea_ayuda));
 			alertDialog
-					.setMessage(getResources().getString(R.string.directorio)+ User_Num +"\n"+pass);
+					.setMessage(getResources().getString(R.string.directorio)+ User_Num );
 			alertDialog.show();
 			return true;
 		

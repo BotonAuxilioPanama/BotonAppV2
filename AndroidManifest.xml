@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.vidaux"
+    package="com.aplafa.vidaux"
     android:versionCode="2"
     android:versionName="2.0" >
 
@@ -14,13 +14,13 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
-        android:name="com.example.vidaux.ApplicationContextProvider"
+        android:name="com.aplafa.vidaux.ApplicationContextProvider"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.vidaux.MainActivity"
+            android:name="com.aplafa.vidaux.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" >
@@ -31,12 +31,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.vidaux.Inserta"
+            android:name="com.aplafa.vidaux.Inserta"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible|adjustResize" >
         </activity>
         <activity
-            android:name="com.example.vidaux.VerCirculo"
+            android:name="com.aplafa.vidaux.VerCirculo"
             android:label="@string/title_activity_ver_circulo" 
              android:screenOrientation="portrait">
             <meta-data
@@ -45,7 +45,7 @@
         </activity>
         <activity android:configChanges="keyboardHidden|orientation|screenSize" 
             android:screenOrientation="portrait"
-             android:name=".NuevoNumero">
+             android:name="com.aplafa.vidaux.NuevoNumero">
             
         </activity>
     </application>

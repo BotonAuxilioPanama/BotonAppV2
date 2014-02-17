@@ -1,4 +1,4 @@
-package com.example.vidaux;
+package com.aplafa.vidaux;
 
 import android.app.Application;
 import android.content.Context;
