@@ -4,6 +4,7 @@
         android:id="@+id/eliminar_menu"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/eliminar"/>
+        android:title="@string/eliminar"
+        android:icon="@android:drawable/ic_menu_delete"/>
 
 </menu>
