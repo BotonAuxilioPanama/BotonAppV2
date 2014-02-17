@@ -15,8 +15,7 @@ import android.widget.Toast;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 
 public class VerCirculo extends ListActivity {
-	// private DBAdapter mDbHelper;
-
+	
 	private Cursor cursor;
 	DataBaseManager database;
 
@@ -48,12 +47,9 @@ public class VerCirculo extends ListActivity {
 	public void lista() {
 		try {
 
-			// mDbHelper = new DBAdapter(this);
-			// mDbHelper.open();
-
 			database = DataBaseManager.instance();
 
-			cursor = database.select("SELECT * FROM circulo");// mDbHelper.fetchAll();
+			cursor = database.select("SELECT * FROM circulo");
 
 			cursor.moveToFirst();
 
@@ -62,10 +58,7 @@ public class VerCirculo extends ListActivity {
 			int[] destino = new int[] { R.id.nombre_circulo_tv,
 					R.id.numero_circulo_tv };
 
-			// Toast.makeText(this,"Click ListItem Number " + c.getString(1),
-			// Toast.LENGTH_LONG).show();
-
-			SimpleCursorAdapter adapterQuery = new SimpleCursorAdapter(this,
+				SimpleCursorAdapter adapterQuery = new SimpleCursorAdapter(this,
 					R.layout.ver_circulo_layout, cursor, origen, destino, 0);
 
 			ListView listView = getListView();
@@ -74,7 +67,7 @@ public class VerCirculo extends ListActivity {
 
 		} catch (Exception hj) {
 			Toast.makeText(this,
-					"Se ha producido un error =(."/* hj.toString() */,
+					getResources().getString(R.string.error),
 					Toast.LENGTH_LONG).show();
 		}
 	}
@@ -87,9 +80,6 @@ public class VerCirculo extends ListActivity {
 				.getMenuInfo();
 		switch (item.getItemId()) {
 		case R.id.eliminar_menu:
-			// mDbHelper.deleteItem(info.id);
-			// // database.delete("registros", "_id= " + String.valueOf(info.id)
-			// );
 			database.delete("circulo", "_id= " + String.valueOf(info.id));
 			lista();
 

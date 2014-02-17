@@ -13,15 +13,17 @@ import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 
 public class Inserta extends Activity implements OnClickListener {
 	Button btGuardar, btBuscar;
 	EditText etnombre, etnumero, etcorreo;
-	private Long mRowId;
+	ImageButton btiGuarda, btiBusca;
+	
 	private DataBaseManager database;
-	//private DBAdapter mDbHelper;
+
 	
 
 	@Override
@@ -32,16 +34,18 @@ public class Inserta extends Activity implements OnClickListener {
 		
 		database = DataBaseManager.instance();
 
-		/*mDbHelper = new DBAdapter(this);
-		mDbHelper.open();*/
-
+	
 		btGuardar = (Button) findViewById(R.id.buttonGuardar);
 		btBuscar = (Button) findViewById(R.id.ButtonBuscar);
 		etnombre = (EditText) findViewById(R.id.Editnombre);
 		etnumero = (EditText) findViewById(R.id.editnumero);
+		btiGuarda = (ImageButton) findViewById(R.id.btiGuardar);
+		btiBusca = (ImageButton) findViewById(R.id.btiBuscar);
 		//etcorreo = (EditText) findViewById(R.id.EditTextCorreo);
 
 		btGuardar.setOnClickListener(this);
+		btiGuarda.setOnClickListener(this);
+		btiBusca.setOnClickListener(this);
 		btBuscar.setOnClickListener(this);
 
 	}
@@ -51,6 +55,12 @@ public class Inserta extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.ButtonBuscar:
+			Intent intent2 = new Intent(Intent.ACTION_GET_CONTENT);
+			intent2.setType(ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE);
+			startActivityForResult(intent2, 1);
+			break;
+			
+		case R.id.btiBuscar:
 			Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
 			intent.setType(ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE);
 			startActivityForResult(intent, 1);
@@ -60,6 +70,13 @@ public class Inserta extends Activity implements OnClickListener {
 			saveState();
 			
 			finish();
+			break;
+			
+		case R.id.btiGuardar:
+			saveState();
+			
+			finish();
+			break;
 		}
 
 	}
@@ -70,7 +87,7 @@ public class Inserta extends Activity implements OnClickListener {
 		String name = etnombre.getText().toString();
 		String num = etnumero.getText().toString();
 		String correo = ""; //etcorreo.getText().toString();
-		//mRowId = null;
+		
 		
 		try {
 			ContentValues valores = new ContentValues();
@@ -81,31 +98,15 @@ public class Inserta extends Activity implements OnClickListener {
 			database.insert("circulo", valores);
 
 			Toast.makeText(Inserta.this,
-					"Insercion de Contacto Exitosa",
+					getResources().getString(R.string.inser_exitosa),
 					Toast.LENGTH_LONG).show();
 
 			finish();
-			
-//									
-//			if (mRowId == null) {
-//				
-//				
-//				long id = mDbHelper.createItem(name, num, correo);
-//				if (id > 0) {
-//					mRowId = id;
-//					Toast.makeText(Inserta.this, "Inserción Correcta", Toast.LENGTH_SHORT).show();
-//				}
-//			} else {
-//			
-//				mDbHelper.updateItem(mRowId, name, num, correo);
-//				Toast.makeText(Inserta.this, "Contacto Actualizado", Toast.LENGTH_SHORT).show();
-//			}
-//			
 		
 	} catch (Exception hg) {
 			hg.printStackTrace();
 
-			Toast.makeText(Inserta.this, hg.toString(), Toast.LENGTH_SHORT).show();
+			Toast.makeText(Inserta.this, getResources().getString(R.string.error), Toast.LENGTH_SHORT).show();
 		}
 
 		}
@@ -143,7 +144,6 @@ public class Inserta extends Activity implements OnClickListener {
 	public void showSelectedNumber(String name, String number) {
 		etnombre.setText(name);
 		etnumero.setText(number);
-
 		
 	}
 

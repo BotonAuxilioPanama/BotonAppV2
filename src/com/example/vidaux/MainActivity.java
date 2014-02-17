@@ -85,10 +85,9 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.menu_directorio:
 			AlertDialog alertDialog;
 			alertDialog = new AlertDialog.Builder(this).create();
-			alertDialog.setTitle("Lineas de Ayuda");
+			alertDialog.setTitle(getResources().getString(R.string.alert_linea_ayuda));
 			alertDialog
-					.setMessage("Telefonos de Ayuda\nPolicia Nacional 104\nBomberos  103\nMIDES 147\n"
-							+ User_Num);
+					.setMessage(getResources().getString(R.string.directorio)+ User_Num);
 			alertDialog.show();
 			return true;
 		
@@ -109,7 +108,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			// Mostramos el mensaje del cuadro de dialogo
 			alertDialogBuilder
 					.setCancelable(false)
-					.setPositiveButton("OK",
+					.setPositiveButton(getResources().getString(R.string.ok),
 							new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog,
 										int id) {
@@ -118,13 +117,13 @@ public class MainActivity extends Activity implements OnClickListener {
 										Intent il = new Intent(MainActivity.this, NuevoNumero.class );
 										startActivity(il);
 									}else{
-										nombreUsuario.setText("");
-										Toast.makeText(MainActivity.this, "Contrseña Incorrecta", Toast.LENGTH_LONG).show();
+										nombreUsuario.setText(getResources().getString(R.string.vacia));
+										Toast.makeText(MainActivity.this, getResources().getString(R.string.pass_error), Toast.LENGTH_LONG).show();
 									}
 									
 							}
 							})
-					.setNegativeButton("Cancelar",
+					.setNegativeButton(getResources().getString(R.string.cancelar),
 							new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog,
 										int id) {
@@ -135,7 +134,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 			// Creamos un AlertDialog y lo mostramos
 			AlertDialog alertDialog2 = alertDialogBuilder.create();
-			alertDialog2.setTitle("Opciones de Administrador");
+			alertDialog2.setTitle(getResources().getString(R.string.admin_op));
 			alertDialog2.show();
 
 			return true;
@@ -151,18 +150,18 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		switch (v.getId()) {
 		case R.id.btVerde:
-			alertar("Alerta Verde Indica conflictos ocasionales");
+			alertar(getResources().getString(R.string.mensaje_verde));
 			enviarsms(APLAFA_Num, "VidAux\nAlerta Verde. Remitente: "
 					+ User_Num);
 			break;
 
 		case R.id.btRojo:
-			alertar("Alerta Roja Indica violencia bajo lesiones");
+			alertar(getResources().getString(R.string.mensaje_rojo));
 			enviarsms(APLAFA_Num, "VidAux\nAlerta Roja. Remitente: " + User_Num);
 			break;
 
 		case R.id.btAmarillo:
-			alertar("Alerta Amarilla Indica acción bajo amenaza");
+			alertar(getResources().getString(R.string.mensaje_amarillo));
 			enviarsms(APLAFA_Num, "VidAux\nAlerta Amarilla. Remitente: "
 					+ User_Num);
 			break;
@@ -181,7 +180,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			callIntent.setData(Uri.parse("tel:*312"));
 			startActivity(callIntent);
 		} catch (ActivityNotFoundException v) {
-			Log.e("dialing-example", "Call failed", v);
+			Log.e("dialing-example", getResources().getString(R.string.error) + getResources().getString(R.string.llamada), v);
 		}
 	}
 
@@ -189,13 +188,8 @@ public class MainActivity extends Activity implements OnClickListener {
 		try {
 
 			database = DataBaseManager.instance();
-
-			// mDbHelper = new DBAdapter(this);
-			// mDbHelper.open();
-
 			cursor = database.select("SELECT * FROM circulo");
-			// mDbHelper.fetchAll();
-
+		
 			if (cursor != null && cursor.moveToFirst()) {
 				do {
 					String number = cursor.getString(2);
@@ -205,7 +199,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			}
 
 		} catch (Exception hj) {
-			Toast.makeText(this, hj.toString(), Toast.LENGTH_LONG).show();
+			Toast.makeText(this, getResources().getString(R.string.error), Toast.LENGTH_LONG).show();
 		}
 
 	}
@@ -213,7 +207,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	private void enviarsms(String numero, String mensaje) {
 		SmsManager sms = SmsManager.getDefault();
 		sms.sendTextMessage(numero, null, mensaje, null, null);
-		Toast.makeText(this, "Enviado a:" + numero, Toast.LENGTH_LONG).show();
+		Toast.makeText(this, getResources().getString(R.string.envio) + numero, Toast.LENGTH_LONG).show();
 
 	}
 
@@ -228,18 +222,14 @@ public class MainActivity extends Activity implements OnClickListener {
 		Cursor datos = database.select("select * from aplafa");
 
 		try {
-			if (datos == null) {
-				datos.close();
-			} else {
-				datos.moveToFirst();
-			}
-
+			datos.moveToFirst();
+			
 			APLAFA_Num = datos.getString(1);
 			pass = datos.getString(2);
 			datos.close();
 
 		} catch (Exception hj) {
-			Toast.makeText(this, hj.toString(), Toast.LENGTH_LONG).show();
+			Toast.makeText(this, getResources().getString(R.string.error), Toast.LENGTH_LONG).show();
 
 		}
 

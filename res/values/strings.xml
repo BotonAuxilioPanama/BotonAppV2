@@ -9,5 +9,32 @@
     <string name="ValVerde">Conflicto</string>
     <string name="ValAmarillo">Amenaza</string>
     <string name="ValRojo">Violencia o Lesión</string>
+    <string name="ing_pass">Ingrese la Contraseña</string>
+    <string name="pass">Contraseña</string>
+    <string name="sel_contacto">Seleccione el Contacto</string>
+    <string name="nombre">Nombre</string>
+    <string name="numero">Número Celular</string>
+    <string name="buscar">Buscar</string>
+    <string name="guardar">Guardar</string>
+    <string name="vacia">"            "</string>
+    <string name="new_contacto">Nuevo Número de Contacto</string>
+    <string name="num_actual">Número Actual</string>
+    <string name="nue_num">Nuevo Número</string>
+    <string name="inser_exitosa">Inserción de Número de Contacto Exitosa!!</string>
+    <string name="error">Ha ocurrido un error. =(</string>
+    <string name="correo">Correo Electrónico</string>
+    <string name="ok">OK</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="admin_op">Opciones de Administrador</string>
+    <string name="envio">Enviado a: </string>
+    <string name="llamada">Llamada Fallida</string>
+    <string name="pass_error">Contraseña Incorrecta</string>
+    <string name="alert_linea_ayuda">Líneas de Ayuda</string>
+    <string name="directorio">Telefonos de Ayuda\nPolicia Nacional 104\nBomberos  103\nMIDES 147\n</string>
+    <string name="mensaje_verde">Alerta Verde. Tengo Conflictos Ocasionales. Por Ahora no estoy en Peligro. </string>
+    <string name="mensaje_amarillo">Alerta Amarilla. Tengo Conflictos. Estoy Bajo Amenza. Puedo estar en Peligro. </string>
+    <string name="mensaje_rojo">Alerta Roja. Tengo Conflictos Violentos. ESTOY EN GRAVE PELIGRO. !AYUDA¡ </string>
+    <string name="intoduce_numero">Debes Introducir un valor Numérico</string>
+    <string name="eliminar">Eliminar</string>
 
 </resources>

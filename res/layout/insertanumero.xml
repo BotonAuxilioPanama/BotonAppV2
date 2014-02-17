@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Seleccione el contacto"
+        android:text="@string/sel_contacto"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="35sp" />
 
@@ -24,15 +24,22 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:hint="Nombre"
+            android:hint="@string/nombre"
             android:inputType="textCapWords|textNoSuggestions|textPersonName" />
+
+        <ImageButton
+            android:id="@+id/btiBuscar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_menu_search" />
 
         <Button
             android:id="@+id/ButtonBuscar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Buscar" />
+            android:text="@string/buscar" />
     </LinearLayout>
 
     <LinearLayout
@@ -45,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:hint="Numero"
+            android:hint="@string/numero"
             android:inputType="phone" >
 
             <requestFocus />
@@ -64,6 +71,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="Email"
+            android:text="@string/vacia"
             android:visibility="invisible" />
 
     </LinearLayout>
@@ -73,11 +81,17 @@
         android:layout_height="wrap_content" 
         android:gravity="center_horizontal">
 
+        <ImageButton
+            android:id="@+id/btiGuardar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_save" />
+
         <Button
             android:id="@+id/buttonGuardar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Guardar" />
+            android:text="@string/guardar" />
 
     </LinearLayout>
 
