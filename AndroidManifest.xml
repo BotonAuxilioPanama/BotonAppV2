@@ -36,15 +36,6 @@
             android:windowSoftInputMode="stateVisible|adjustResize" >
         </activity>
         <activity
-            android:name="com.example.vidaux.NuevoUsuarioActivity"
-            android:label="Crear nuevo usuario" >
-        </activity>
-        <activity
-            android:name="com.example.vidaux.VerTodo"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateVisible|adjustResize" >
-        </activity>
-        <activity
             android:name="com.example.vidaux.VerCirculo"
             android:label="@string/title_activity_ver_circulo" 
              android:screenOrientation="portrait">

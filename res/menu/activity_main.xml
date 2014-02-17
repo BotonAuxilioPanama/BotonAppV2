@@ -1,3 +1,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/menu_circulo" 
+        android:title="+Circulo"
+        android:icon="@android:drawable/ic_input_add"></item>
+    <item android:id="@+id/menu_directorio" android:title="Directorio"
+        android:icon="@android:drawable/ic_dialog_info"></item>
+    <item android:id="@+id/menu_ver_circulo" android:title="Ver Circulo"
+        android:icon="@android:drawable/ic_menu_agenda"></item>
+    <item android:id="@+id/menu_config" android:title="Configurar"
+        android:icon="@android:drawable/ic_menu_manage"></item>
 
-</menu>
+</menu>  

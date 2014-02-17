@@ -3,6 +3,7 @@
     android:id="@+id/prompt"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/back"
     android:orientation="vertical"
     android:padding="10dp" >
 
@@ -11,7 +12,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Ingerse la contraseña:"
-        android:textSize="22sp" />
+        android:textSize="27sp"
+        android:textStyle="bold|italic" />
 
     <EditText
         android:id="@+id/nombre_usuario"

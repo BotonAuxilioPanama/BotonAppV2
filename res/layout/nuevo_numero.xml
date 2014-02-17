@@ -2,9 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:showDividers="middle" >
+
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="                     "
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="10sp" />
 
     <TextView
         android:id="@+id/TextView02"
@@ -15,26 +24,26 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="25sp" />
 
-  
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="                     "
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="12sp" />
+
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Numero Actual"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="32sp" />
+        android:textSize="30sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal" >
-
-        <TextView
-            android:id="@+id/TextView01"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Actual    "
-            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
             android:id="@+id/tvTaActual"
@@ -49,6 +58,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/TextView04"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="                     "
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
     </LinearLayout>
 
     <TextView
@@ -57,7 +74,7 @@
         android:layout_height="wrap_content"
         android:text="Numero Nuevo"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="35sp" />
+        android:textSize="30sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -69,7 +86,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="numberDecimal" >
+            android:hint="Celular"
+            android:inputType="numberDecimal"
+            android:textSize="25sp" >
 
             <requestFocus />
         </EditText>
@@ -81,4 +100,5 @@
         android:layout_height="wrap_content"
         android:text="Guardar" />
 
+   
 </LinearLayout>

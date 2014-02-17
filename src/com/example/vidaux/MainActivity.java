@@ -71,18 +71,6 @@ public class MainActivity extends Activity implements OnClickListener {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_main, menu);
-
-		menu.add(Menu.NONE, 1, Menu.NONE, "+Circulo").setIcon(
-				android.R.drawable.ic_input_add);
-		menu.add(Menu.NONE, 2, Menu.NONE, "Directorio").setIcon(
-				android.R.drawable.ic_dialog_info);
-		// menu.add(Menu.NONE, 3, Menu.NONE,
-		// "Registrar").setIcon(R.drawable.ic_launcher);
-		menu.add(Menu.NONE, 4, Menu.NONE, "Ver Circulo").setIcon(
-				android.R.drawable.ic_menu_agenda);
-		menu.add(Menu.NONE, 5, Menu.NONE, "Config").setIcon(
-				R.drawable.ic_launcher);
-
 		return true;
 
 	}
@@ -90,30 +78,26 @@ public class MainActivity extends Activity implements OnClickListener {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case 1:
+		case R.id.menu_circulo:
 			Intent i = new Intent(this, Inserta.class);
 			startActivity(i);
 			return true;
-		case 2:
+		case R.id.menu_directorio:
 			AlertDialog alertDialog;
 			alertDialog = new AlertDialog.Builder(this).create();
 			alertDialog.setTitle("Lineas de Ayuda");
 			alertDialog
-					.setMessage("Telefonos de Ayuda\nPolicia Naccional 104\nBomberos  103\nMIDES 147\n"
+					.setMessage("Telefonos de Ayuda\nPolicia Nacional 104\nBomberos  103\nMIDES 147\n"
 							+ User_Num);
 			alertDialog.show();
 			return true;
-		case 3:
-			Intent ik = new Intent(this, NuevoUsuarioActivity.class);
-			startActivity(ik);
-			return true;
-		case 4:
+		
+		case R.id.menu_ver_circulo:
 			Intent g = new Intent(this, VerCirculo.class);
 			startActivity(g);
 			return true;
 
-		case 5:
-
+		case R.id.menu_config:
 			LayoutInflater li = LayoutInflater.from(this);
 			View prompt = li.inflate(R.layout.dialogo_layout, null);
 			
@@ -138,11 +122,7 @@ public class MainActivity extends Activity implements OnClickListener {
 										Toast.makeText(MainActivity.this, "Contrseña Incorrecta", Toast.LENGTH_LONG).show();
 									}
 									
-									
-									// Rescatamos el nombre del EditText y lo
-									// mostramos por pantalla
-									// etiquetaNombre.setText("Hola "+nombreUsuario.getText());
-								}
+							}
 							})
 					.setNegativeButton("Cancelar",
 							new DialogInterface.OnClickListener() {
@@ -155,12 +135,9 @@ public class MainActivity extends Activity implements OnClickListener {
 
 			// Creamos un AlertDialog y lo mostramos
 			AlertDialog alertDialog2 = alertDialogBuilder.create();
+			alertDialog2.setTitle("Opciones de Administrador");
 			alertDialog2.show();
 
-			/*
-			 * Intent il = new Intent(this, NuevoNumero.class );
-			 * startActivity(il);
-			 */
 			return true;
 
 		default:
