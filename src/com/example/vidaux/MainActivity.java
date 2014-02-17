@@ -22,6 +22,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
 public class MainActivity extends Activity implements OnClickListener {
 	Button b, btRojo, btAmarillo, btVerde, btSUME;
 	Intent callIntent;
@@ -87,7 +88,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			alertDialog = new AlertDialog.Builder(this).create();
 			alertDialog.setTitle(getResources().getString(R.string.alert_linea_ayuda));
 			alertDialog
-					.setMessage(getResources().getString(R.string.directorio)+ User_Num);
+					.setMessage(getResources().getString(R.string.directorio)+ User_Num +"\n"+pass);
 			alertDialog.show();
 			return true;
 		
@@ -112,14 +113,22 @@ public class MainActivity extends Activity implements OnClickListener {
 							new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog,
 										int id) {
-										String codigo = nombreUsuario.getText().toString();
-									if(codigo.equals(pass)){
-										Intent il = new Intent(MainActivity.this, NuevoNumero.class );
-										startActivity(il);
-									}else{
-										nombreUsuario.setText(getResources().getString(R.string.vacia));
-										Toast.makeText(MainActivity.this, getResources().getString(R.string.pass_error), Toast.LENGTH_LONG).show();
-									}
+										String codigo;
+										try {
+											codigo = Encripta.md5((nombreUsuario.getText().toString()));
+											if(codigo.equals(pass)){
+												Intent il = new Intent(MainActivity.this, NuevoNumero.class );
+												startActivity(il);
+											}else{
+												nombreUsuario.setText(getResources().getString(R.string.vacia));
+												Toast.makeText(MainActivity.this, getResources().getString(R.string.pass_error), Toast.LENGTH_LONG).show();
+											}
+																						
+										} catch (Exception e) {
+											// TODO Auto-generated catch block
+											Toast.makeText(MainActivity.this, getResources().getString(R.string.error), Toast.LENGTH_LONG).show();
+										}
+									
 									
 							}
 							})

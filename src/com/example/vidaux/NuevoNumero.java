@@ -7,15 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class NuevoNumero extends Activity {
 	EditText TaNueva;
-	Button Guardar;
+	
 	TextView TaActual;
+	ImageButton btiGuardar;
 
 	String nueva;
 	String tasa;
@@ -29,16 +30,16 @@ public class NuevoNumero extends Activity {
 		setContentView(R.layout.nuevo_numero);
 
 		TaNueva = (EditText) findViewById(R.id.etTaNueva);
-		Guardar = (Button) findViewById(R.id.btGuardar);
 		TaActual = (TextView) findViewById(R.id.tvTaActual);
+		btiGuardar = (ImageButton) findViewById(R.id.btiGuardarN);
 
 		database = DataBaseManager.instance();
 		Cursor curTasa = database.select("select numero from aplafa");
 		tasa = obtenerValor(curTasa);
 
 		TaActual.setText(tasa.toString());
-
-		Guardar.setOnClickListener(new OnClickListener() {
+		
+		btiGuardar.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -74,6 +75,7 @@ public class NuevoNumero extends Activity {
 			}
 		});
 
+	
 	}
 
 	public String obtenerValor(Cursor c) {

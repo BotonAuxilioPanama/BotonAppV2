@@ -18,7 +18,7 @@
     <string name="guardar">Guardar</string>
     <string name="vacia">"            "</string>
     <string name="new_contacto">Nuevo Número de Contacto</string>
-    <string name="num_actual">Número Actual</string>
+    <string name="num_actual">Número Actual:  </string>
     <string name="nue_num">Nuevo Número</string>
     <string name="inser_exitosa">Inserción de Número de Contacto Exitosa!!</string>
     <string name="error">Ha ocurrido un error. =(</string>
@@ -36,5 +36,9 @@
     <string name="mensaje_rojo">Alerta Roja. Tengo Conflictos Violentos. ESTOY EN GRAVE PELIGRO. !AYUDA¡ </string>
     <string name="intoduce_numero">Debes Introducir un valor Numérico</string>
     <string name="eliminar">Eliminar</string>
+    <string name="circulo">+Personas al Circulo</string>
+    <string name="lin_ayuda">Líneas de Ayuda</string>
+    <string name="ver_mi_circulo">Ver Mi Circulo</string>
+    <string name="config">Opciones</string>
 
 </resources>

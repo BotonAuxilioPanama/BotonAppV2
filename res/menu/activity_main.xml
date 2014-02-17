@@ -1,12 +1,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <item android:id="@+id/menu_circulo" 
-        android:title="+Circulo"
+        android:title="@string/circulo"
         android:icon="@android:drawable/ic_input_add"></item>
-    <item android:id="@+id/menu_directorio" android:title="Directorio"
+    <item android:id="@+id/menu_directorio" android:title="@string/lin_ayuda"
         android:icon="@android:drawable/ic_dialog_info"></item>
-    <item android:id="@+id/menu_ver_circulo" android:title="Ver Circulo"
-        android:icon="@android:drawable/ic_menu_agenda"></item>
-    <item android:id="@+id/menu_config" android:title="Configurar"
-        android:icon="@android:drawable/ic_menu_manage"></item>
+    <item android:id="@+id/menu_ver_circulo" android:title="@string/ver_mi_circulo"
+        android:icon="@android:drawable/ic_menu_sort_by_size"></item>
+    <item android:id="@+id/menu_config" android:title="@string/config"
+        android:icon="@android:drawable/ic_menu_preferences"></item>
 
 </menu>  

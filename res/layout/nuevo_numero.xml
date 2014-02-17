@@ -8,21 +8,13 @@
     android:showDividers="middle" >
 
     <TextView
-        android:id="@+id/TextView03"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/vacia"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="10sp" />
-
-    <TextView
         android:id="@+id/TextView02"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/new_contacto"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="25sp" />
+        android:textSize="22sp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -32,26 +24,27 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="12sp" />
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/num_actual"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="30sp" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal" >
 
         <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.54"
+            android:text="@string/num_actual"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="20sp" />
+
+        <TextView
             android:id="@+id/tvTaActual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="@string/vacia"
             android:textAppearance="?android:attr/textAppearanceLarge" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -60,11 +53,12 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/TextView04"
+            android:id="@+id/TextView01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/vacia"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="12sp" />
 
     </LinearLayout>
 
@@ -74,7 +68,7 @@
         android:layout_height="wrap_content"
         android:text="@string/nue_num"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="30sp" />
+        android:textSize="25sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -93,12 +87,6 @@
             <requestFocus />
         </EditText>
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btGuardar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/guardar" />
 
     <ImageButton
         android:id="@+id/btiGuardarN"

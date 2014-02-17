@@ -11,14 +11,13 @@ import android.provider.ContactsContract;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 
 public class Inserta extends Activity implements OnClickListener {
-	Button btGuardar, btBuscar;
+	
 	EditText etnombre, etnumero, etcorreo;
 	ImageButton btiGuarda, btiBusca;
 	
@@ -35,30 +34,23 @@ public class Inserta extends Activity implements OnClickListener {
 		database = DataBaseManager.instance();
 
 	
-		btGuardar = (Button) findViewById(R.id.buttonGuardar);
-		btBuscar = (Button) findViewById(R.id.ButtonBuscar);
 		etnombre = (EditText) findViewById(R.id.Editnombre);
 		etnumero = (EditText) findViewById(R.id.editnumero);
 		btiGuarda = (ImageButton) findViewById(R.id.btiGuardar);
 		btiBusca = (ImageButton) findViewById(R.id.btiBuscar);
 		//etcorreo = (EditText) findViewById(R.id.EditTextCorreo);
 
-		btGuardar.setOnClickListener(this);
+		
 		btiGuarda.setOnClickListener(this);
 		btiBusca.setOnClickListener(this);
-		btBuscar.setOnClickListener(this);
-
+	
 	}
 
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
-		case R.id.ButtonBuscar:
-			Intent intent2 = new Intent(Intent.ACTION_GET_CONTENT);
-			intent2.setType(ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE);
-			startActivityForResult(intent2, 1);
-			break;
+	
 			
 		case R.id.btiBuscar:
 			Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
@@ -66,12 +58,7 @@ public class Inserta extends Activity implements OnClickListener {
 			startActivityForResult(intent, 1);
 			break;
 
-		case R.id.buttonGuardar:
-			saveState();
-			
-			finish();
-			break;
-			
+				
 		case R.id.btiGuardar:
 			saveState();
 			

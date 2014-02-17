@@ -33,13 +33,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@android:drawable/ic_menu_search" />
-
-        <Button
-            android:id="@+id/ButtonBuscar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/buscar" />
     </LinearLayout>
 
     <LinearLayout
@@ -86,12 +79,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@android:drawable/ic_menu_save" />
-
-        <Button
-            android:id="@+id/buttonGuardar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/guardar" />
 
     </LinearLayout>
 
